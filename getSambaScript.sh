@@ -2,13 +2,13 @@
 
 menu () {
     ##je voudrais que le premier echo soit en vert
-    echo "$(tput setaf 3)que fair?"
-    echo "1. $(tput setaf 5)Désinstaller Samba"
-    echo "2. $(tput setaf 5)Ajouter un utilisateur"
-    echo "3. $(tput setaf 5)Ajouter un disque partagé"
-    echo "4. $(tput setaf 5)Voir les dossiers partagés"
-    echo "5. $(tput setaf 5)Voir les utilisateurs et les mots de passe"
-    echo "6. $(tput setaf 2)Quitter"
+    echo "$(tput setaf 2)que fair?"
+    echo "$(tput setaf 6)1. Désinstaller Samba"
+    echo "2. Ajouter un utilisateur"
+    echo "3. Ajouter un disque partagé"
+    echo "4. Voir les dossiers partagés"
+    echo "5. Voir les utilisateurs et les mots de passe"
+    echo "$(tput setaf 4)6. Quitter"
 }
 
 # Vérifier si Samba est installé
