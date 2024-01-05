@@ -25,6 +25,7 @@ if ! command -v smbd &> /dev/null; then
     sudo touch /etc/samba/smbpasswd
     sudo /etc/init.d/smbd restart
     echo "Samba installé, les dossiers partagés sont dans /home/shares/public."
+    menu
 else
     menu
 fi
