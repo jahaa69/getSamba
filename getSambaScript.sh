@@ -71,7 +71,7 @@ elif [ $choix -eq 3 ]; then
     exit 0
 elif [ $choix -eq 4 ]; then
     echo "Liste des dossiers partagés :"
-    sudo cat /etc/samba/smb.conf | grep path
+    sudo ls /home/shares/public
     exit 0
 elif [ $choix -eq 5 ]; then
     echo "Liste des utilisateurs et des mots de passe :"
