@@ -52,19 +52,21 @@ elif [ $choix -eq 2 ]; then
     exit 0
 elif [ $choix -eq 3 ]; then
     echo "Ajout d'un disque partagé..."
-    read -p "Nom du disque (exemple disk1=sda1 / disk2 =sda2): " disk
+    read -p "Nom du disque (exemple disk1=sda1 / disk2=sda2): " disk
     sudo mkdir /home/shares/public/$disk
 
     # Vérifier si le disque existe
     if [[ -e /dev/$disk ]]; then
         # Vérifier si le disque a un chiffre dans son nom
         if [[ $disk =~ [0-9] ]]; then
-            diskName=$(echo $disk | cut -d [0-9] -f1)
-            diskNumber=$(echo $disk | cut -d [0-9] -f2)
+            diskName=$(echo $disk | sed 's/[0-9]*//g')
+            diskNumber=$(echo $disk | sed 's/[^0-9]*//g')
             sda="sda$diskNumber"
         fi
         sudo mount /dev/$sda /home/shares/public/$disk
-        sudo cp fstab /etc/fstab
+
+        # Ajouter une entrée dans /etc/fstab
+        echo "/dev/$sda /home/shares/public/$disk ext4 defaults 0 0" | sudo tee -a /etc/fstab
         echo "Disque partagé ajouté."
     else
         echo "Le disque n'existe pas."
