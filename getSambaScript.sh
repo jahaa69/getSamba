@@ -11,7 +11,7 @@ menu () {
 }
 
 # Vérifier si Samba est installé
-if [[ ! -e /etc/samba/smb.conf ]]; then
+if ! command -v smbd &> /dev/null; then
     echo "Samba n'est pas installé. Installation en cours..."
     sudo apt-get update
     sudo apt-get install -y samba samba-common-bin
