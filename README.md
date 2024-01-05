@@ -1,6 +1,12 @@
 # getSamba
  it's a small script that allows you to install Samba and configure it automatically
 
+## for lunch script 
+
+```bash
+  sh ./getSambaScript.sh	
+```
+
  ## To add another disk 
  
 to add another disk you would have to add certain information to do this type the command
@@ -42,6 +48,12 @@ finish!!!
 =============================================
 # getSamba
  c'est un petit script qui permet d'installer Samba et de le configurer automatiquement
+
+ ## Pour lancer le script
+
+ ```bash
+  sh ./getSambaScript.sh	
+```
 
  ## Pour ajouter un autre disque
  
