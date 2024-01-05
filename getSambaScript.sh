@@ -8,7 +8,8 @@ menu () {
     echo "3. Ajouter un disque partagé"
     echo "4. Voir les dossiers partagés"
     echo "5. Voir les utilisateurs et les mots de passe"
-    echo "$(tput setaf 4)6. Quitter"
+    echo "$(tput setaf 1)6. Quitter"
+    echo "$(tput sgr0)"
 }
 
 # Vérifier si Samba est installé
