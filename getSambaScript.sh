@@ -46,7 +46,7 @@ elif [ $choix -eq 2 ]; then
     sudo smbpasswd -a $user
     echo "$user:$password" >> /etc/samba/smbpasswd
     echo "Utilisateur ajouté."
-    exit 0
+    menu
 elif [ $choix -eq 3 ]; then
     echo "Ajout d'un disque partagé..."
     read -p "Nom du disque (exemple disk1=sda1 / disk2=sda2): " disk
@@ -68,15 +68,15 @@ elif [ $choix -eq 3 ]; then
     else
         echo "Le disque n'existe pas."
     fi
-    exit 0
+    menu
 elif [ $choix -eq 4 ]; then
     echo "Liste des dossiers partagés :"
     sudo ls /home/shares/public
-    exit 0
+    menu
 elif [ $choix -eq 5 ]; then
     echo "Liste des utilisateurs et des mots de passe :"
     sudo cat /etc/samba/smbpasswd
-    exit 0
+    menu
 else
     echo "Script terminé."
     exit 1
