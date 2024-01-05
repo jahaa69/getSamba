@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function menu {
+function menu () {
     echo "Que faire ?"
     echo "1. Désinstaller Samba"
     echo "2. Ajouter un utilisateur"
