@@ -32,8 +32,6 @@ else
     menu
 fi
 
-choix=$(menu)
-
 if [ $choix -eq 1 ]; then
     echo "Désinstallation de Samba..."
     sudo apt-get remove -y samba samba-common-bin
