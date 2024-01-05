@@ -33,11 +33,6 @@ fi
 
 read -p "Votre choix : " choix
 
-while [[ ! $choix =~ ^[1-6]$ ]]; do
-    echo "Choix invalide. Veuillez entrer un nombre entre 1 et 6."
-    read -p "Votre choix : " choix
-done
-
 if [ $choix -eq 1 ]; then
     echo "Désinstallation de Samba..."
     sudo apt-get remove -y samba samba-common-bin
