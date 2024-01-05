@@ -10,6 +10,7 @@ menu () {
     echo "5. Voir les utilisateurs et les mots de passe"
     echo "$(tput setaf 1)6. Quitter"
     echo "$(tput sgr0)"
+    read -p "Votre choix : " choix
 }
 
 # Vérifier si Samba est installé
@@ -30,8 +31,6 @@ if ! command -v smbd &> /dev/null; then
 else
     menu
 fi
-
-read -p "Votre choix : " choix
 
 if [ $choix -eq 1 ]; then
     echo "Désinstallation de Samba..."
